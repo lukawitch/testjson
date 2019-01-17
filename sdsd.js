@@ -12,7 +12,8 @@ queryParams += '&' + encodeURIComponent('lunDay') + '=' + encodeURIComponent('26
 
                ,url:ss+queryParams
                ,success: function(xml){
-                    console.log(xml);
+                    var xmlData = $(xml).find("lunDay").text();
+					location.href = "res.html?a='"+xmlData+"'";
                 }
              }); 
       
