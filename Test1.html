@@ -1,0 +1,26 @@
+<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>  
+<script>
+var xhr = new XMLHttpRequest();
+var url = 'http://apis.data.go.kr/B090041/openapi/service/LrsrCldInfoService/getSolCalInfo'; /*URL*/
+var queryParams = '?' + encodeURIComponent('ServiceKey') + '='+'FBj3U74WoSJVQRx6Jxzi9POVE5lbTeRlgUOpv39uzs7qijqvcU%2BQakUabpDgy2Ds3%2BaCoz2UNmg%2BSAXETib%2Fig%3D%3D'; /*Service Key*/
+queryParams += '&' + encodeURIComponent('lunYear') + '=' + encodeURIComponent('2015'); /*연(음력)*/
+queryParams += '&' + encodeURIComponent('lunMonth') + '=' + encodeURIComponent('09'); /*월(음력)*/
+queryParams += '&' + encodeURIComponent('lunDay') + '=' + encodeURIComponent('22'); /*일(음력)*/
+xhr.open('GET', url + queryParams);
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        alert('Status: '+this.status+ ' Headers: '+JSON.stringify(this.getAllResponseHeaders())+' Body: '+this.responseText);
+    }
+};
+
+xhr.send('');
+
+$(document).ready(function() {
+var html=xhr;
+ $("#after").append(html);
+ });
+</script>
+
+<body>
+<div id="after"></div>
+</body>
