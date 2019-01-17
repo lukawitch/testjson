@@ -8,8 +8,10 @@ queryParams += '&' + encodeURIComponent('lunMonth') + '=' + encodeURIComponent('
 queryParams += '&' + encodeURIComponent('lunDay') + '=' + encodeURIComponent('26'); /*일(음력)*/
       
             $.ajax({
+				crossOrigin: true,
                type: "GET"
                ,dataType: "xml"
+
                ,url:ss+queryParams
                ,success: function(xml){
                     console.log(xml);
